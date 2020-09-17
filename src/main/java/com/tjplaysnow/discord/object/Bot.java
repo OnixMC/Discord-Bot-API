@@ -358,7 +358,7 @@ public class Bot extends ProgramBot {
 	}
 	
 	@Override
-	public void onEvent(@NotNull GenericEvent e) {
+	public void onEvent(GenericEvent e) {
 //		Bot login event.
 		if (e instanceof ReadyEvent) {
 			loadAction.run();
