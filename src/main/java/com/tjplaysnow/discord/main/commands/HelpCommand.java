@@ -31,14 +31,14 @@ public class HelpCommand extends ProgramCommand {
 	
 	@Override
 	public boolean run(User user, MessageChannel channel, Guild guild, String label, List<String> args) {
-		StringBuilder helpMessage = new StringBuilder("**__Commands:__**\n");
+		StringBuilder helpMessage = new StringBuilder("**__Comandos:__**\n");
 		for (ProgramCommand command : bot.getCommands()) {
-			if (!channel.getType().equals(ChannelType.PRIVATE)) {
+			if (channel.getType().equals(ChannelType.PRIVATE)) {
 				if (PermissionUtil.checkPermission(Objects.requireNonNull(guild.getMember(user)), command.getPermissionNeeded())) {
 					helpMessage.append("> ").append(command.getLabel()).append("\n   - ").append(command.getDescription()).append("\n");
 				}
 			} else {
-				helpMessage = new StringBuilder("Sorry, but you need to run this command on the server.");
+				helpMessage = new StringBuilder("Desculpe, mas você deve utilizar este comando no particular.");
 			}
 		}
 		

@@ -13,7 +13,7 @@
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>LATEST</version>
+            <version>4.2.0_189</version>
         </dependency>
 
         <!--Sponge API-->

@@ -68,7 +68,7 @@ public class Bot extends ProgramBot {
 			if (event.getMessage().getContentRaw().startsWith(getPrefix())) {
 				User sender = event.getAuthor();
 				MessageChannel channel = event.getChannel();
-				Guild guild = event.getGuild();
+				Guild guild = channel.getType() == ChannelType.PRIVATE ? null : event.getGuild();
 				String[] commandArgs = event.getMessage().getContentRaw().substring(getPrefix().length()).split(" ");
 				List<String> args = new ArrayList<>();
 				Collections.addAll(args, commandArgs);
